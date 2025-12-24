@@ -1,0 +1,50 @@
+openapi: 3.0.0
+info:
+  title: Todo app
+  description: Creating and getting todos
+  version: "1.0.0"
+
+servers:
+  - url: http://localhost:8080
+
+paths:
+  /signup:
+    post:
+      summary: Signup users
+      description: Endpoint for the new users to signup
+      requestBody:
+        description: Username and password of the user for signing up
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SignupSchema"
+      responses:
+        '200':
+          description: List of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SignupMessage'
+
+components:
+  schemas:
+    SignupSchema:
+      type: object
+      properties:
+        username:
+          type: string
+          description: The username of the user
+        password:
+          type: string
+          description: The password of the user
+        required:
+          - username
+          - password
+    SignupMessage:
+      type: object
+      properties:
+        message:
+          type: string
+          description: The user has signed up successfully
