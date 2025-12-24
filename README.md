@@ -1,4 +1,4 @@
-# idk
+# openAPI-spec
 
 To install dependencies:
 
