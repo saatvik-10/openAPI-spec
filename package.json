@@ -1,6 +1,6 @@
 {
   "name": "idk",
-  "module": "index.ts",
+  "module": "hono.ts",
   "type": "module",
   "private": true,
   "devDependencies": {
@@ -10,11 +10,13 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@hono/zod-openapi": "^1.2.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/swagger-ui-express": "^4.1.8",
     "cors": "^2.8.5",
     "express": "^5.2.1",
+    "hono": "^4.11.1",
     "swagger-ui-express": "^5.0.1",
     "yaml": "^2.8.2"
   }
