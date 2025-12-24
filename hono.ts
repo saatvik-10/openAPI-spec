@@ -1,4 +1,5 @@
 import { z, createRoute, OpenAPIHono } from '@hono/zod-openapi';
+import { swaggerUI } from '@hono/swagger-ui';
 
 const app = new OpenAPIHono();
 
@@ -46,6 +47,8 @@ app.openapi(route, async (c) => {
     message: 'User signedup successfully',
   });
 });
+
+app.get('/ui', swaggerUI({ url: '/' }));
 
 app.doc('/', {
   openapi: '3.0.0',
